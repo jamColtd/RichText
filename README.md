@@ -10,6 +10,7 @@ tsc
 
 
 #####1.创建文件
+````text
 -RICHTEXT
 --js
 ----jq.1.4.4.js
@@ -24,6 +25,7 @@ tsc
 --package.json
 --README.md
 --tsconfig.json  /*ts配置文件*/
+````
 
 #####2.添加标签
 `````html
