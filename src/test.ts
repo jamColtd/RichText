@@ -10,6 +10,7 @@
 
 // 初始化数据
 var getTextTag:string = '';
+var isFontBold:boolean;
 
 // 页面加载后触发
 $(function(){
@@ -22,19 +23,53 @@ $(function(){
         text = txt.toString();
         getTextTag =  text;
     })
+
+    // 鼠标移动触发的事件
+    $('p').mouseover(function(e){
+        if( $(e.target).css('font-weight') === '700'){
+            $('#fontBold').css('backgroundColor', "rgb(216, 213, 213)")
+        }else{
+            $('#fontBold').css('backgroundColor', "rgb(252, 252, 252)")
+        }
+    })
+
+    // 鼠标按下触发事件
+    $('p').mousedown(function(e){
+        // let label:string = e.target.outerHTML;
+        // let labelChildren = e.target.children;
+        if( $(e.target).css('font-weight') === '700'){
+            $('#fontBold').css('backgroundColor', "rgb(216, 213, 213)")
+            isFontBold = true;
+        }else{
+            isFontBold = false;
+            $('#fontBold').css('backgroundColor', "rgb(252, 252, 252)")
+        }
+    })
 })
 
-function fontB(){
-    if($('p').html().indexOf(getTextTag) >= 0){
-        let textReplace:string;
-        textReplace = $('p').html().replace(getTextTag,'');
-        $('p').html(`<span style="font-weight:bold">${getTextTag}</span>${textReplace}`)
+// 加粗触发事件
+function fontB(type:string){
+    let textReplace:string;
+    if(type === 'addFontB'){
+        if($('p').html().indexOf(getTextTag) >= 0){
+            textReplace = $('p').html().replace(getTextTag,`<span style="font-weight:bold">${getTextTag}</span>`);// 替换标签属性
+            $('p').html(`${textReplace}`)
+        }
+    }else if(type === 'remoFontB'){
+        textReplace = $('span').html().replace(getTextTag,`<span style="font-weight:normal">${getTextTag}</span>`);// 替换标签属性
+        $('span').html(`${textReplace}`)
     }
 }
 
+// 斜体触发事件
 function Font(font:string){
     if(font === 'fontBold'){
-        fontB()
+        if(isFontBold  === false){
+            fontB('addFontB')
+        }else{
+            console.log(isFontBold)
+            fontB('remoFontB')
+        }
     }else if(font === 'fontItalics'){
         console.log("I")
     }
