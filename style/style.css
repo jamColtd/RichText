@@ -1,0 +1,15 @@
+*{margin: 0;padding:0;}
+html, body{height: 100%;width: 100%;}
+#homePage{margin: 60px 40px;}
+header{display: -webkit-flex;display: flex;}
+nav{flex-wrap:wrap;}
+.input-style{
+    background-color: rgb(252, 252, 252);
+    width: 20px;
+    height: 20px;
+    border: none;
+}
+.input-style:hover{
+    background-color: rgb(216, 213, 213) ;
+    border-radius: 4px;
+}
