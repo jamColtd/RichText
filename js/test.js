@@ -30,6 +30,9 @@ $(function () {
             $('#fontBold').css('backgroundColor', "rgb(252, 252, 252)");
         }
     });
+    $('body').mousedown(function (e) {
+        $('#fontBold').css('backgroundColor', "rgb(252, 252, 252)");
+    });
     // 鼠标按下触发事件
     $('p').mousedown(function (e) {
         // let label:string = e.target.outerHTML;
