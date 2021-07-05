@@ -110,5 +110,16 @@ $(e.target).css('font-weight') === '700'
             $('#fontBold').css('backgroundColor', "rgb(252, 252, 252)")
         })
 ````
+##字体样式修改
+````css
+/* 字体加粗 */
+.font-s-B{ 
+    font-weight: bold;
+}
+/* 字体倾斜 */
+.font-s-i{
+    font-style: oblique;
+}
+````
 
 
