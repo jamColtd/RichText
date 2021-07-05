@@ -100,4 +100,12 @@ $('section').append(tag)
 $(e.target).css('font-weight') === '700'
 `````
 
+#####4.清除按钮样式改变的颜色
+````javascript
+    // 清除样式事件
+        $('body').mousedown(function(e){
+            $('#fontBold').css('backgroundColor', "rgb(252, 252, 252)")
+        })
+````
+
 
